@@ -113,9 +113,90 @@ Chương 2 : Mô hình và định dạng dữ liệu không gian
 
             -> Lưu ý kĩ thuật : Trong cấu trúc dữ liệu không gian , một lớp dữ liệu vector chỉ chứa duy nhất một kiểu hình học (một lớp toàn Point hoặc toàn Polygon)
 
-        Review day 2 :
-
-
-
         2.2. Mô hình dữ liệu Raster
-            - ĐỊnh nghĩa :
+            - ĐỊnh nghĩa : Thích hợp nhất để mô hình hóa các hiện tượng thay đổi liên tục trên bề mặt trái đất và không có ranh giới rời rạc
+            vd : độ cao địa hình , nhiệt độ , lượng mưa...
+
+            - Cấu trúc : Chia bề mặt trái đất thành một mạng lưới các ô vuông bằng nhau (cell/pixel) tổ chức theo hàng và cột . Mỗi ô vuông sẽ lưu trữ đúng 1 giá trị
+            số biểu thị cho thuộc tính của vị trí địa lý đó
+                + Kích thước 1 ô vuông : Xác định độ phân giải ngoài không gian -> vd : 1 ô 10m X 10m vậy mỗi ô trên máy tính đại diện cho 100m2 ngoài thực địa
+                + Giá trị ô vuông : Là một giá trị số địa diện cho hiện tượng địa lý
+
+        2.3. So sánh Mô hình Raster và Vector
+            - Mô hình Vector :
+                + Bản chất vị trí : Xác định bằng tọa độ điểm chính xác (x , y)
+                + Lưu thuộc tính : Được tách biệt làm 2 thành phần độc lập nhưng nối với nhau qua mã định danh
+
+            - Mô hình Raster :
+                + Bản chất vị trí : Xác định bằng vị trí ô trong mạng lưới ma trận
+                + Lưu thuộc tính : Lưu trực tiếp dưới dạng giá trị số của từng ô lưới
+
+    3. Các định dạng dữ liệu không gian hiện đại
+    - Định dạng dữ liệu là : Chuẩn các tệp tin và kiến trúc thế hệ mới được thiết kế dựa trên các mô hình Vector/Raster để tối ưu hóa cho điện toán đám mây , xử lý dữ liệu lớn và truyền tải qua internet
+    -> Máy tính không thể hiểu các khái niệm điểm , vùng hay ảnh vệ tinh . Muốn lưu trữ chúng nhà phát triển phải tạo ra tệp tin (định dạng) tuân theo đúng quy tắc của mô hình dữ liệu :
+        + Dựa trên mô hình Vector (Point , Line , Polygon + Bảng thuộc tính)
+        -> Các định dạng sẽ được thiết kế để lưu chuỗi tọa độ (X , Y) và bảng dữ liệu đi kèm . vd : GeoJSON
+
+        + Dựa trên mô hình Raster (Ma trận Pixel r, c + Giá trị ô)
+        -> Các định dạng sẽ được thiết kế để lưu cấu trúc mảng ô vuông , tọa độ mốc Origin và giá trị số của từng ô . vd ; GeoTIFF
+
+    - Trong thực tế phần mềm , dữ liệu không gian tồn tại dưới rất nhiều định dạng khác nhau tùy mục đích sử dụng . Dưới đây là các định dạng buộc phải biết
+
+        3.1. Định dạng vector phổ biến
+
+        * GeoJSON (mã nguồn js) : Khác với các định dạng cũ như Shapefile (bắt buộc 1 file chỉ chứa toàn điểm , hoặc toàn đường , vùng)
+        -> File GeoJSON dạng FeatureCollection cho phép bạn trộn lẫn nhiều kiểu hình học trong cùng 1 file duy nhất
+
+        - Cấu trúc 1 file GeoJSON :
+            {
+                "type" : "FeatureCollection" , -> cố định : bắt buộc phải khai báo cấp file
+                "features" : [
+                    {
+                        "type" : "Feature",  -> cố định : bắt buộc khai báo cấp đối tượng
+                        "properties" : " {
+                            "ten" : "Tháp rùa"  -> Khu vực tự do thêm/sửa thuộc tính cho đối tượng này
+                        }
+                        "geometry" : {
+                            "type" : "Point",  -> cố định : bắt buộc dùng đúng 1 trong 7 kiểu hình học của vector
+                            "coordinates" : [105 , 21]
+                        }
+                    }
+                ]
+            }
+
+        -> Cấu trúc đóng gói :
+            1. "type" : "FeatureCollection" : Đại diện cho tập hợp danh sách nhiều "Feature" trong cùng 1 file
+            2. "type" : "Feature" : Đại diện cho 1 đối tượng địa lý hoàn chỉnh gồm 1 "geometry" và 1 "properties"
+
+        -> Các loại hình học của vector : Point , LineString , Polygon , MultiPoint , MultiLineString , MultiPolygon , Feature , FeatureCollection
+            + Feature là : đại diện cho 1 đối tượng địa lý hoàn chỉnh
+            + MultiPoint là : gồm nhiều cặp tọa độ độc lập nhau cùng nằm trong 1 mảng
+            + MultiLineString : gồm nhiều đường/đoạn độc lập , bị chia cắt đứt đoạn trong không gian nhưng vẫn chung 1 đối tượng quản lý
+            + MultiPolygon : gồm nhiều vùng độc lập nằm tách rời nhau nhưng hợp lại thành 1 đơn vị địa lý
+            -> Dạng hình học Multi- ra đời nhằm giải quyết các trường hợp một đối tượng địa lý bị phân tách trong không gian nhưng vẫn cần gắn chung một bộ thông tin thuộc tính duy nhất
+
+        -> Lưu ý quan trọng :
+            + GeoJSON công thức tọa độ : [X , Y] = [Kinh độ , Vĩ độ]
+            + GG map công thức tọa độ : [X , Y] = [Vĩ độ , Kinh độ]
+            -> cách đọc tọa độ của GeoJSON khác so với tọa dộ của GG map nên khi sử dụng tọa độ gg map cần đảo ngược lại khi thêm vào file GeoJSON
+
+        * ESRI Shapefile (*.shp)
+            - Định dạng dữ liệu vector cổ điển do Esri phát triển . Một bộ dữ liệu Shapefile bắt buộc đi kèm tối thiểu 3 file có tên giống nhau nhưng phần mở rộng khác nhau :
+                + .shp : lưu trữ dữ liệu hình học vector
+                + .shx : lưu trữ chỉ mục vị trí hình học giúp truy cập nhnah
+                + .dbf : lưu trữ các thuộc tính phi không gian dạng bảng
+            -> hạn chế : tên cột thuộc tính tối đa 10 kí tự , dung lượng file giới hạn 2GB
+
+        3.2. Các định dạng Raster phổ biến
+
+        * GeoTIFF (*.tif / *.img) :
+            - Thực chất là tệp ảnh TIFF tiêu chuẩn nhưng được nhúng thêm các thẻ siêu dữ liệu (GeoKeys) chứa các thông tin về hệ tọa độ , phép chiếu phẳng và tọa độ thực địa của các pixel ảnh
+
+        * Cloud-Optimized GeoTIFF (COG) :
+            - Cấu trúc GeoTIFF cải tiến tối ưu cho hạ tầng đám mây . Nó cho phép máy chủ web chỉ cần tải đúng vùng dữ liệu hoặc mức thu phóng mà client dang cần thông qua cơ chế HTTP Range Requests , giúp tiết kiệm băng thông mà không cần tải toàn bộ tệp tin dung lượng lớn về máy
+
+        3.3. Định dạng Big data nâng cao
+
+        * GeoParquet : Định dạng lưu trữ dữ liệu dạng cột tối ưu hóa việc phân tích dữ liệu không gian cực lớn trên các công cụ Big data như Apache Spark hay DuckDB
+
+        * STAC : Chuẩn REST API / JSON dùng để mô tả và quản lý các danh mục dữ liệu không gian - thời gian lớn

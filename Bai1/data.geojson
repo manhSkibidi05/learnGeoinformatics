@@ -1,0 +1,35 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {"name": "Bảo tàng Lịch sử Quốc gia", "type": "Museum", "rating": 4.7},
+            "geometry": {"type": "Point", "coordinates": [105.8583, 21.0253]}
+        },
+        {
+            "type": "Feature",
+            "properties": {"name": "Bảo tàng Dân tộc học Việt Nam", "type": "Museum", "rating": 4.6},
+            "geometry": {"type": "Point", "coordinates": [105.7988, 21.0406]}
+        },
+        {
+            "type": "Feature",
+            "properties": {"name": "Bảo tàng Mỹ thuật Việt Nam", "type": "Museum", "rating": 4.5},
+            "geometry": {"type": "Point", "coordinates": [105.8322, 21.0310]}
+        },
+        {
+            "type": "Feature",
+            "properties": {"name": "Bảo tàng Hà Nội", "type": "Museum", "rating": 4.8},
+            "geometry": {"type": "Point", "coordinates": [105.7792, 21.0084]}
+        },
+        {
+            "type": "Feature",
+            "properties": {"name": "Chùa Trấn Quốc", "type": "Pagoda", "rating": 4.7},
+            "geometry": {"type": "Point", "coordinates": [105.8372, 21.0480]}
+        },
+        {
+            "type": "Feature",
+            "properties": {"name": "Hồ Hoàn Kiếm", "type": "Park", "rating": 4.8},
+            "geometry": {"type": "Point", "coordinates": [105.8523, 21.0285]}
+        }
+    ]
+}
