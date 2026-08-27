@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "filtered_museums",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "name": "Bảo tàng Lịch sử Quốc gia", "category": "Museum", "rating": 4.6 }, "geometry": { "type": "Point", "coordinates": [ 105.8595, 21.0252 ] } },
+{ "type": "Feature", "properties": { "name": "Bảo tàng Mỹ thuật Việt Nam", "category": "Museum", "rating": 4.7 }, "geometry": { "type": "Point", "coordinates": [ 105.8347, 21.031 ] } },
+{ "type": "Feature", "properties": { "name": "Bảo tàng Dân tộc học Việt Nam", "category": "Museum", "rating": 4.6 }, "geometry": { "type": "Point", "coordinates": [ 105.7987, 21.0405 ] } }
+]
+}

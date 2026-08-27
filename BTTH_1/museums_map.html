@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_c25f2739b9b41f123d1d9e50804ab1ea {
+                #map_83f46275d2224aeefa80dfed8de83cb3 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -54,19 +54,19 @@
 <body>
     
     
-            <div class="folium-map" id="map_c25f2739b9b41f123d1d9e50804ab1ea" ></div>
+            <div class="folium-map" id="map_83f46275d2224aeefa80dfed8de83cb3" ></div>
         
 </body>
 <script>
     
     
-            var map_c25f2739b9b41f123d1d9e50804ab1ea = L.map(
-                "map_c25f2739b9b41f123d1d9e50804ab1ea",
+            var map_83f46275d2224aeefa80dfed8de83cb3 = L.map(
+                "map_83f46275d2224aeefa80dfed8de83cb3",
                 {
                     center: [21.0285, 105.8542],
                     crs: L.CRS.EPSG3857,
                     ...{
-  "zoom": 12,
+  "zoom": 14,
   "zoomControl": true,
   "preferCanvas": false,
 }
@@ -78,15 +78,15 @@
 
         
     
-            var tile_layer_58a373fef7e75e1db5c438328682f0ad = L.tileLayer(
+            var tile_layer_65215887b46e3d335e5376ea21962ce6 = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
-  "maxZoom": 18,
-  "maxNativeZoom": 18,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
   "noWrap": false,
   "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
-  "subdomains": "abc",
+  "subdomains": "abcd",
   "detectRetina": false,
   "tms": false,
   "opacity": 1,
@@ -95,45 +95,45 @@
             );
         
     
-            tile_layer_58a373fef7e75e1db5c438328682f0ad.addTo(map_c25f2739b9b41f123d1d9e50804ab1ea);
+            tile_layer_65215887b46e3d335e5376ea21962ce6.addTo(map_83f46275d2224aeefa80dfed8de83cb3);
         
     
-            var marker_5713156ff26d2f50e4cda787ff2c2b73 = L.marker(
-                [21.0253, 105.8583],
+            var marker_9d9bfdfe725d4ca1a14a3b1943500659 = L.marker(
+                [21.0252, 105.8595],
                 {
 }
-            ).addTo(map_c25f2739b9b41f123d1d9e50804ab1ea);
+            ).addTo(map_83f46275d2224aeefa80dfed8de83cb3);
         
     
-            var icon_d4bc2eb0e4531b635051cc656fb7a065 = L.AwesomeMarkers.icon(
+            var icon_b8e08c691d2263579c3c9ff772106e1f = L.AwesomeMarkers.icon(
                 {
   "markerColor": "red",
   "iconColor": "white",
-  "icon": "info-sign",
-  "prefix": "glyphicon",
+  "icon": "museum",
+  "prefix": "fa",
   "extraClasses": "fa-rotate-0",
 }
             );
         
     
-        var popup_2086480fa3bc6feb6dd488f2befa9a4b = L.popup({
+        var popup_a1121596b569732bf5607b0db9570458 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_97bd9d2a8a5eda46b4ed7c0e4b7fea20 = $(`<div id="html_97bd9d2a8a5eda46b4ed7c0e4b7fea20" style="width: 100.0%; height: 100.0%;"><b>Bảo tàng Lịch sử Quốc gia</b><br>Loại: Bảo tàng<br>Đánh giá: ⭐ 4.7</div>`)[0];
-                popup_2086480fa3bc6feb6dd488f2befa9a4b.setContent(html_97bd9d2a8a5eda46b4ed7c0e4b7fea20);
+                var html_53fd78aa09f5014b976a1847b29bb951 = $(`<div id="html_53fd78aa09f5014b976a1847b29bb951" style="width: 100.0%; height: 100.0%;">     <b>Bảo tàng Lịch sử Quốc gia</b><br>     Thể loại: Museum<br>     Đánh giá: ⭐ 4.6     </div>`)[0];
+                popup_a1121596b569732bf5607b0db9570458.setContent(html_53fd78aa09f5014b976a1847b29bb951);
             
         
 
-        marker_5713156ff26d2f50e4cda787ff2c2b73.bindPopup(popup_2086480fa3bc6feb6dd488f2befa9a4b)
+        marker_9d9bfdfe725d4ca1a14a3b1943500659.bindPopup(popup_a1121596b569732bf5607b0db9570458)
         ;
 
         
     
     
-            marker_5713156ff26d2f50e4cda787ff2c2b73.bindTooltip(
+            marker_9d9bfdfe725d4ca1a14a3b1943500659.bindTooltip(
                 `<div>
                      Bảo tàng Lịch sử Quốc gia
                  </div>`,
@@ -143,45 +143,93 @@
             );
         
     
-                marker_5713156ff26d2f50e4cda787ff2c2b73.setIcon(icon_d4bc2eb0e4531b635051cc656fb7a065);
+                marker_9d9bfdfe725d4ca1a14a3b1943500659.setIcon(icon_b8e08c691d2263579c3c9ff772106e1f);
             
     
-            var marker_ab4403c8197eca57b414f25258335e78 = L.marker(
-                [21.0406, 105.7988],
+            var marker_aeb40af3607e59dada9969de0b1d6d0b = L.marker(
+                [21.031, 105.8347],
                 {
 }
-            ).addTo(map_c25f2739b9b41f123d1d9e50804ab1ea);
+            ).addTo(map_83f46275d2224aeefa80dfed8de83cb3);
         
     
-            var icon_f816acdefd6fc1b5ad874b38712f530f = L.AwesomeMarkers.icon(
+            var icon_db704c3ff409fda46983cdf6e5e80c4b = L.AwesomeMarkers.icon(
                 {
   "markerColor": "red",
   "iconColor": "white",
-  "icon": "info-sign",
-  "prefix": "glyphicon",
+  "icon": "museum",
+  "prefix": "fa",
   "extraClasses": "fa-rotate-0",
 }
             );
         
     
-        var popup_9509c5cfd125f00d69bc2afafe6e4e4a = L.popup({
+        var popup_70d231258f9e3378bba1a76a148f7315 = L.popup({
   "maxWidth": 300,
 });
 
         
             
-                var html_9bc6fbb9a633fde15cf50fbceb8b644a = $(`<div id="html_9bc6fbb9a633fde15cf50fbceb8b644a" style="width: 100.0%; height: 100.0%;"><b>Bảo tàng Dân tộc học Việt Nam</b><br>Loại: Bảo tàng<br>Đánh giá: ⭐ 4.6</div>`)[0];
-                popup_9509c5cfd125f00d69bc2afafe6e4e4a.setContent(html_9bc6fbb9a633fde15cf50fbceb8b644a);
+                var html_3dcbb81b66d7284665a43250ba1bfc46 = $(`<div id="html_3dcbb81b66d7284665a43250ba1bfc46" style="width: 100.0%; height: 100.0%;">     <b>Bảo tàng Mỹ thuật Việt Nam</b><br>     Thể loại: Museum<br>     Đánh giá: ⭐ 4.7     </div>`)[0];
+                popup_70d231258f9e3378bba1a76a148f7315.setContent(html_3dcbb81b66d7284665a43250ba1bfc46);
             
         
 
-        marker_ab4403c8197eca57b414f25258335e78.bindPopup(popup_9509c5cfd125f00d69bc2afafe6e4e4a)
+        marker_aeb40af3607e59dada9969de0b1d6d0b.bindPopup(popup_70d231258f9e3378bba1a76a148f7315)
         ;
 
         
     
     
-            marker_ab4403c8197eca57b414f25258335e78.bindTooltip(
+            marker_aeb40af3607e59dada9969de0b1d6d0b.bindTooltip(
+                `<div>
+                     Bảo tàng Mỹ thuật Việt Nam
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_aeb40af3607e59dada9969de0b1d6d0b.setIcon(icon_db704c3ff409fda46983cdf6e5e80c4b);
+            
+    
+            var marker_936120eff0850b4a2bd840aeb577ca7b = L.marker(
+                [21.0405, 105.7987],
+                {
+}
+            ).addTo(map_83f46275d2224aeefa80dfed8de83cb3);
+        
+    
+            var icon_6544f43ba382d85689343a5b2ae3f309 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "museum",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_50ca3d7020bcf0893a72ff85417aa7c1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_12719e8c71393ab120e501bb799df06c = $(`<div id="html_12719e8c71393ab120e501bb799df06c" style="width: 100.0%; height: 100.0%;">     <b>Bảo tàng Dân tộc học Việt Nam</b><br>     Thể loại: Museum<br>     Đánh giá: ⭐ 4.6     </div>`)[0];
+                popup_50ca3d7020bcf0893a72ff85417aa7c1.setContent(html_12719e8c71393ab120e501bb799df06c);
+            
+        
+
+        marker_936120eff0850b4a2bd840aeb577ca7b.bindPopup(popup_50ca3d7020bcf0893a72ff85417aa7c1)
+        ;
+
+        
+    
+    
+            marker_936120eff0850b4a2bd840aeb577ca7b.bindTooltip(
                 `<div>
                      Bảo tàng Dân tộc học Việt Nam
                  </div>`,
@@ -191,55 +239,7 @@
             );
         
     
-                marker_ab4403c8197eca57b414f25258335e78.setIcon(icon_f816acdefd6fc1b5ad874b38712f530f);
-            
-    
-            var marker_34320d069603dca75e4a405f3e7490a1 = L.marker(
-                [21.0084, 105.7792],
-                {
-}
-            ).addTo(map_c25f2739b9b41f123d1d9e50804ab1ea);
-        
-    
-            var icon_9b126b1750397751010da5b922070b41 = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "red",
-  "iconColor": "white",
-  "icon": "info-sign",
-  "prefix": "glyphicon",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_b479cb6edbd93bb42458764547f9e9f8 = L.popup({
-  "maxWidth": 300,
-});
-
-        
-            
-                var html_51c0db739f7314810e5485b77d8e7b54 = $(`<div id="html_51c0db739f7314810e5485b77d8e7b54" style="width: 100.0%; height: 100.0%;"><b>Bảo tàng Hà Nội</b><br>Loại: Bảo tàng<br>Đánh giá: ⭐ 4.8</div>`)[0];
-                popup_b479cb6edbd93bb42458764547f9e9f8.setContent(html_51c0db739f7314810e5485b77d8e7b54);
-            
-        
-
-        marker_34320d069603dca75e4a405f3e7490a1.bindPopup(popup_b479cb6edbd93bb42458764547f9e9f8)
-        ;
-
-        
-    
-    
-            marker_34320d069603dca75e4a405f3e7490a1.bindTooltip(
-                `<div>
-                     Bảo tàng Hà Nội
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_34320d069603dca75e4a405f3e7490a1.setIcon(icon_9b126b1750397751010da5b922070b41);
+                marker_936120eff0850b4a2bd840aeb577ca7b.setIcon(icon_6544f43ba382d85689343a5b2ae3f309);
             
 </script>
 </html>
