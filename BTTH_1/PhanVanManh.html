@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9e618b25ee85c4aa8712be2d08119827 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_9e618b25ee85c4aa8712be2d08119827" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_9e618b25ee85c4aa8712be2d08119827 = L.map(
+                "map_9e618b25ee85c4aa8712be2d08119827",
+                {
+                    center: [21.0722, 105.7741],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 16,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_e8dfd6fe3269012cd83a09e998ac66ee = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_e8dfd6fe3269012cd83a09e998ac66ee.addTo(map_9e618b25ee85c4aa8712be2d08119827);
+        
+    
+            var feature_group_167fba33992d775d6f5fa55663fb7637 = L.featureGroup(
+                {
+}
+            );
+        
+    
+        function geo_json_897c26be98b0400a239f2ed02a8f8f6c_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#0055ff", "fillColor": "#3388ff", "fillOpacity": 0.15, "weight": 2};
+            }
+        }
+
+        function geo_json_897c26be98b0400a239f2ed02a8f8f6c_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_897c26be98b0400a239f2ed02a8f8f6c = L.geoJson(null, {
+                onEachFeature: geo_json_897c26be98b0400a239f2ed02a8f8f6c_onEachFeature,
+            
+                style: geo_json_897c26be98b0400a239f2ed02a8f8f6c_styler,
+            ...{
+}
+        });
+
+        function geo_json_897c26be98b0400a239f2ed02a8f8f6c_add (data) {
+            geo_json_897c26be98b0400a239f2ed02a8f8f6c
+                .addData(data);
+        }
+            geo_json_897c26be98b0400a239f2ed02a8f8f6c_add({"bbox": [105.76928713457647, 21.06768262722745, 105.77891285922706, 21.076717370345886], "features": [{"bbox": [105.76928713457647, 21.06768262722745, 105.77891285922706, 21.076717370345886], "geometry": {"coordinates": [[[105.77891285922706, 21.072177986609702], [105.77888737815701, 21.071735313586416], [105.77881579251451, 21.07129711634464], [105.77869879209585, 21.070867614894468], [105.77853750403246, 21.070450945467645], [105.77833348192249, 21.070051120687317], [105.77808869085695, 21.069671990929262], [105.77780548848544, 21.069317207246698], [105.77748660230385, 21.068990186215288], [105.77713510338309, 21.068694077036763], [105.7767543767922, 21.068431731217697], [105.77634808900055, 21.068205675115063], [105.77592015257282, 21.068018085612863], [105.77547468849703, 21.067870769163665], [105.7750159865076, 21.06776514439673], [105.77454846378552, 21.067702228460035], [105.77407662243264, 21.06768262722745], [105.77360500612932, 21.067706529465497], [105.77313815639192, 21.067773705015515], [105.77268056885129, 21.067883507008986], [105.77223664997213, 21.068034878094565], [105.77181067462993, 21.068226360617054], [105.77140674495347, 21.068456110650402], [105.77102875082834, 21.068721915749702], [105.77068033244217, 21.069021216251652], [105.77036484523164, 21.069351129918346], [105.77008532756854, 21.069708479687538], [105.76984447149643, 21.070089824262336], [105.76964459679961, 21.070491491245935], [105.76948762865435, 21.070909612502728], [105.76937507907776, 21.071340161405214], [105.76930803235373, 21.07177899160852], [105.76928713457647, 21.072221876978993], [105.76931258741295, 21.07266455229259], [105.76938414614503, 21.073102754311144], [105.76950112201054, 21.073532262840985], [105.7696623888216, 21.073948941378298], [105.76986639379683, 21.07434877694983], [105.77011117250365, 21.07472791876511], [105.77039436776741, 21.075082715307556], [105.77071325236541, 21.075409749507315], [105.77106475528754, 21.075705871656595], [105.77144549131098, 21.075968229750377], [105.77185179360394, 21.07619429695997], [105.7722797490444, 21.076381895974528], [105.77272523591371, 21.076529219975942], [105.77318396360153, 21.07663485004472], [105.77365151393927, 21.07669776882914], [105.77412338376384, 21.076717370345886], [105.77459502830072, 21.07669346581753], [105.77506190494856, 21.076626285490743], [105.77551951704234, 21.076516476417602], [105.77596345717382, 21.07636509622153], [105.77638944965075, 21.076173602907836], [105.77679339168593, 21.075943840817267], [105.7771713929188, 21.075678022858078], [105.77751981288858, 21.075378709187785], [105.77783529609775, 21.075048782550326], [105.7781148043283, 21.07469142050643], [105.77835564589911, 21.074310064824676], [105.77855550158317, 21.073908388328707], [105.7787124469349, 21.073490259519705], [105.77882497081313, 21.07305970531537], [105.77889198992149, 21.072620872264345], [105.77891285922706, 21.072177986609702]]], "type": "Polygon"}, "id": "5", "properties": {"category": "Tr\u01b0\u1eddng \u0110\u1ea1i h\u1ecdc", "color": "orange", "icon": "graduation-cap", "name": "Tr\u01b0\u1eddng \u0110H M\u1ecf - \u0110\u1ecba ch\u1ea5t (C\u01a1 s\u1edf ch\u00ednh)"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_897c26be98b0400a239f2ed02a8f8f6c.bindTooltip(
+                `<div>
+                     Bán kính 500m quanh ĐH Mỏ - Địa chất
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_897c26be98b0400a239f2ed02a8f8f6c.addTo(feature_group_167fba33992d775d6f5fa55663fb7637);
+        
+    
+            feature_group_167fba33992d775d6f5fa55663fb7637.addTo(map_9e618b25ee85c4aa8712be2d08119827);
+        
+    
+            var feature_group_7ceb9a74d8384cbf36f1f4682d1aa01a = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_e95dc3af98275c080005a60ce6f03ab5 = L.marker(
+                [21.0718, 105.7735],
+                {
+}
+            ).addTo(feature_group_7ceb9a74d8384cbf36f1f4682d1aa01a);
+        
+    
+            var icon_75a17db1bda48d875a37a183e3e56be2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "bus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_52dbf72203e0ef5110c3af9f66795b29 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_311002d1571814efaf0c3833c623d921 = $(`<div id="html_311002d1571814efaf0c3833c623d921" style="width: 100.0%; height: 100.0%;">     <div style='font-family: Arial; width: 180px;'>         <h4 style='margin-bottom: 5px; color: #2c3e50;'>Điểm xe buýt ĐH Mỏ - Địa chất (Phố Viên)</h4>         <b>Phân loại:</b> Bến xe buýt     </div>     </div>`)[0];
+                popup_52dbf72203e0ef5110c3af9f66795b29.setContent(html_311002d1571814efaf0c3833c623d921);
+            
+        
+
+        marker_e95dc3af98275c080005a60ce6f03ab5.bindPopup(popup_52dbf72203e0ef5110c3af9f66795b29)
+        ;
+
+        
+    
+    
+            marker_e95dc3af98275c080005a60ce6f03ab5.bindTooltip(
+                `<div>
+                     Điểm xe buýt ĐH Mỏ - Địa chất (Phố Viên)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e95dc3af98275c080005a60ce6f03ab5.setIcon(icon_75a17db1bda48d875a37a183e3e56be2);
+            
+    
+            var marker_68634dd614bbc52c82c8bf2966fe0362 = L.marker(
+                [21.0732, 105.775],
+                {
+}
+            ).addTo(feature_group_7ceb9a74d8384cbf36f1f4682d1aa01a);
+        
+    
+            var icon_05c57a7f7c5300ae2258dbe899886108 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "bus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_99628b1d5119a19d27ae9e1d6034d296 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7fed26402598d830eb0ad95fa27b02ed = $(`<div id="html_7fed26402598d830eb0ad95fa27b02ed" style="width: 100.0%; height: 100.0%;">     <div style='font-family: Arial; width: 180px;'>         <h4 style='margin-bottom: 5px; color: #2c3e50;'>Điểm xe buýt Cổng B - ĐH Mỏ Địa chất</h4>         <b>Phân loại:</b> Bến xe buýt     </div>     </div>`)[0];
+                popup_99628b1d5119a19d27ae9e1d6034d296.setContent(html_7fed26402598d830eb0ad95fa27b02ed);
+            
+        
+
+        marker_68634dd614bbc52c82c8bf2966fe0362.bindPopup(popup_99628b1d5119a19d27ae9e1d6034d296)
+        ;
+
+        
+    
+    
+            marker_68634dd614bbc52c82c8bf2966fe0362.bindTooltip(
+                `<div>
+                     Điểm xe buýt Cổng B - ĐH Mỏ Địa chất
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_68634dd614bbc52c82c8bf2966fe0362.setIcon(icon_05c57a7f7c5300ae2258dbe899886108);
+            
+    
+            var marker_ea26448c088a60ca9479de093016b3f0 = L.marker(
+                [21.0736, 105.7785],
+                {
+}
+            ).addTo(feature_group_7ceb9a74d8384cbf36f1f4682d1aa01a);
+        
+    
+            var icon_bb366cdb6a60a96d3b810dcfb86ef89a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "bus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e502d696725d3209eaf7e64216355bd6 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a2758f53ee4befe014cd40b3609e1b96 = $(`<div id="html_a2758f53ee4befe014cd40b3609e1b96" style="width: 100.0%; height: 100.0%;">     <div style='font-family: Arial; width: 180px;'>         <h4 style='margin-bottom: 5px; color: #2c3e50;'>Điểm xe buýt Học viện Tài chính</h4>         <b>Phân loại:</b> Bến xe buýt     </div>     </div>`)[0];
+                popup_e502d696725d3209eaf7e64216355bd6.setContent(html_a2758f53ee4befe014cd40b3609e1b96);
+            
+        
+
+        marker_ea26448c088a60ca9479de093016b3f0.bindPopup(popup_e502d696725d3209eaf7e64216355bd6)
+        ;
+
+        
+    
+    
+            marker_ea26448c088a60ca9479de093016b3f0.bindTooltip(
+                `<div>
+                     Điểm xe buýt Học viện Tài chính
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ea26448c088a60ca9479de093016b3f0.setIcon(icon_bb366cdb6a60a96d3b810dcfb86ef89a);
+            
+    
+            var marker_65c31c2f7b32817280a917301e1225c2 = L.marker(
+                [21.0708, 105.777],
+                {
+}
+            ).addTo(feature_group_7ceb9a74d8384cbf36f1f4682d1aa01a);
+        
+    
+            var icon_2bdd7d4aef95a12f71eabef3f2334d00 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "bus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4f22fb24ff276407cc97fcf088143f4c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_32a706668787f99805bac94798237ef2 = $(`<div id="html_32a706668787f99805bac94798237ef2" style="width: 100.0%; height: 100.0%;">     <div style='font-family: Arial; width: 180px;'>         <h4 style='margin-bottom: 5px; color: #2c3e50;'>Điểm dừng xe buýt KTX Học viện Tài chính</h4>         <b>Phân loại:</b> Bến xe buýt     </div>     </div>`)[0];
+                popup_4f22fb24ff276407cc97fcf088143f4c.setContent(html_32a706668787f99805bac94798237ef2);
+            
+        
+
+        marker_65c31c2f7b32817280a917301e1225c2.bindPopup(popup_4f22fb24ff276407cc97fcf088143f4c)
+        ;
+
+        
+    
+    
+            marker_65c31c2f7b32817280a917301e1225c2.bindTooltip(
+                `<div>
+                     Điểm dừng xe buýt KTX Học viện Tài chính
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_65c31c2f7b32817280a917301e1225c2.setIcon(icon_2bdd7d4aef95a12f71eabef3f2334d00);
+            
+    
+            var marker_aa4550bd9f942e49195d45b274e948ca = L.marker(
+                [21.0705, 105.7698],
+                {
+}
+            ).addTo(feature_group_7ceb9a74d8384cbf36f1f4682d1aa01a);
+        
+    
+            var icon_2f5439938d91f8db160de05cc7d03989 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "bus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2f73d3e2e8a36c205649909efe4d9e48 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_131a303cebdd0b2df72dabb2590c4e09 = $(`<div id="html_131a303cebdd0b2df72dabb2590c4e09" style="width: 100.0%; height: 100.0%;">     <div style='font-family: Arial; width: 180px;'>         <h4 style='margin-bottom: 5px; color: #2c3e50;'>Điểm dừng Phố Viên (Đường Lê Văn Hiến)</h4>         <b>Phân loại:</b> Bến xe buýt     </div>     </div>`)[0];
+                popup_2f73d3e2e8a36c205649909efe4d9e48.setContent(html_131a303cebdd0b2df72dabb2590c4e09);
+            
+        
+
+        marker_aa4550bd9f942e49195d45b274e948ca.bindPopup(popup_2f73d3e2e8a36c205649909efe4d9e48)
+        ;
+
+        
+    
+    
+            marker_aa4550bd9f942e49195d45b274e948ca.bindTooltip(
+                `<div>
+                     Điểm dừng Phố Viên (Đường Lê Văn Hiến)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_aa4550bd9f942e49195d45b274e948ca.setIcon(icon_2f5439938d91f8db160de05cc7d03989);
+            
+    
+            feature_group_7ceb9a74d8384cbf36f1f4682d1aa01a.addTo(map_9e618b25ee85c4aa8712be2d08119827);
+        
+    
+            var feature_group_9ffaed0b4bb5ee5ba9637549e2c64e67 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_a3f571caf07f8d2bf91bb48dc95edd7e = L.marker(
+                [21.0722, 105.7741],
+                {
+}
+            ).addTo(feature_group_9ffaed0b4bb5ee5ba9637549e2c64e67);
+        
+    
+            var icon_3ffcff0868274201021b96a2d7b4e37a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "graduation-cap",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ad86636fe90aa6eb1ccb38199b1c183d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6e6767b6c853210ee1b70a36496fded9 = $(`<div id="html_6e6767b6c853210ee1b70a36496fded9" style="width: 100.0%; height: 100.0%;">     <div style='font-family: Arial; width: 180px;'>         <h4 style='margin-bottom: 5px; color: #2c3e50;'>Trường ĐH Mỏ - Địa chất (Cơ sở chính)</h4>         <b>Phân loại:</b> Trường Đại học     </div>     </div>`)[0];
+                popup_ad86636fe90aa6eb1ccb38199b1c183d.setContent(html_6e6767b6c853210ee1b70a36496fded9);
+            
+        
+
+        marker_a3f571caf07f8d2bf91bb48dc95edd7e.bindPopup(popup_ad86636fe90aa6eb1ccb38199b1c183d)
+        ;
+
+        
+    
+    
+            marker_a3f571caf07f8d2bf91bb48dc95edd7e.bindTooltip(
+                `<div>
+                     Trường ĐH Mỏ - Địa chất (Cơ sở chính)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a3f571caf07f8d2bf91bb48dc95edd7e.setIcon(icon_3ffcff0868274201021b96a2d7b4e37a);
+            
+    
+            var marker_98302305e1ba06296c21f0e3661486b5 = L.marker(
+                [21.0755, 105.7727],
+                {
+}
+            ).addTo(feature_group_9ffaed0b4bb5ee5ba9637549e2c64e67);
+        
+    
+            var icon_a0d5e4bc8d8a59beaa93bd8349935146 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "graduation-cap",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f1b6fa0cee730e6d4dc5c77a7a69b60e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_51c476dcb977404c2b14533553ff2126 = $(`<div id="html_51c476dcb977404c2b14533553ff2126" style="width: 100.0%; height: 100.0%;">     <div style='font-family: Arial; width: 180px;'>         <h4 style='margin-bottom: 5px; color: #2c3e50;'>Học viện Tài chính (Cơ sở Đức Thắng)</h4>         <b>Phân loại:</b> Trường Đại học     </div>     </div>`)[0];
+                popup_f1b6fa0cee730e6d4dc5c77a7a69b60e.setContent(html_51c476dcb977404c2b14533553ff2126);
+            
+        
+
+        marker_98302305e1ba06296c21f0e3661486b5.bindPopup(popup_f1b6fa0cee730e6d4dc5c77a7a69b60e)
+        ;
+
+        
+    
+    
+            marker_98302305e1ba06296c21f0e3661486b5.bindTooltip(
+                `<div>
+                     Học viện Tài chính (Cơ sở Đức Thắng)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_98302305e1ba06296c21f0e3661486b5.setIcon(icon_a0d5e4bc8d8a59beaa93bd8349935146);
+            
+    
+            feature_group_9ffaed0b4bb5ee5ba9637549e2c64e67.addTo(map_9e618b25ee85c4aa8712be2d08119827);
+        
+    
+            var feature_group_ebdf03388261a3a5b6d17cff1fec22e0 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_0583581ae79535d51f1525f8531e99d1 = L.marker(
+                [21.071, 105.773],
+                {
+}
+            ).addTo(feature_group_ebdf03388261a3a5b6d17cff1fec22e0);
+        
+    
+            var icon_150ea0fe48f9f40cef5e115c78517972 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "medkit",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_187c86bc415906a0c23996369ff522ac = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c03ea76d4ab8022cd91765c0dcdf1f99 = $(`<div id="html_c03ea76d4ab8022cd91765c0dcdf1f99" style="width: 100.0%; height: 100.0%;">     <div style='font-family: Arial; width: 180px;'>         <h4 style='margin-bottom: 5px; color: #2c3e50;'>Nhà thuốc Long Châu (Số 88 Phố Viên)</h4>         <b>Phân loại:</b> Tiệm thuốc     </div>     </div>`)[0];
+                popup_187c86bc415906a0c23996369ff522ac.setContent(html_c03ea76d4ab8022cd91765c0dcdf1f99);
+            
+        
+
+        marker_0583581ae79535d51f1525f8531e99d1.bindPopup(popup_187c86bc415906a0c23996369ff522ac)
+        ;
+
+        
+    
+    
+            marker_0583581ae79535d51f1525f8531e99d1.bindTooltip(
+                `<div>
+                     Nhà thuốc Long Châu (Số 88 Phố Viên)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0583581ae79535d51f1525f8531e99d1.setIcon(icon_150ea0fe48f9f40cef5e115c78517972);
+            
+    
+            var marker_a2e1fbff656519849daffb6f0dc6efdf = L.marker(
+                [21.0725, 105.7752],
+                {
+}
+            ).addTo(feature_group_ebdf03388261a3a5b6d17cff1fec22e0);
+        
+    
+            var icon_799526ff1018ce9704177fb9034e83ad = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "medkit",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e06876f1e534cff486446a9317d3f663 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9eb6d00b34263e4d5a1fad2195ff322a = $(`<div id="html_9eb6d00b34263e4d5a1fad2195ff322a" style="width: 100.0%; height: 100.0%;">     <div style='font-family: Arial; width: 180px;'>         <h4 style='margin-bottom: 5px; color: #2c3e50;'>Nhà thuốc Pharmacity Cổ Nhuế 2</h4>         <b>Phân loại:</b> Tiệm thuốc     </div>     </div>`)[0];
+                popup_e06876f1e534cff486446a9317d3f663.setContent(html_9eb6d00b34263e4d5a1fad2195ff322a);
+            
+        
+
+        marker_a2e1fbff656519849daffb6f0dc6efdf.bindPopup(popup_e06876f1e534cff486446a9317d3f663)
+        ;
+
+        
+    
+    
+            marker_a2e1fbff656519849daffb6f0dc6efdf.bindTooltip(
+                `<div>
+                     Nhà thuốc Pharmacity Cổ Nhuế 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a2e1fbff656519849daffb6f0dc6efdf.setIcon(icon_799526ff1018ce9704177fb9034e83ad);
+            
+    
+            var marker_3b364372c3deafd9fe9a4f0ac9c9dca5 = L.marker(
+                [21.07, 105.7715],
+                {
+}
+            ).addTo(feature_group_ebdf03388261a3a5b6d17cff1fec22e0);
+        
+    
+            var icon_4e93ab47a04d156da40728a2b584dcf6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "medkit",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a63921a7c71102b162466264676e154d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_aa4886c864f1f107af1f3f23aa7ab702 = $(`<div id="html_aa4886c864f1f107af1f3f23aa7ab702" style="width: 100.0%; height: 100.0%;">     <div style='font-family: Arial; width: 180px;'>         <h4 style='margin-bottom: 5px; color: #2c3e50;'>Nhà thuốc An Kang (Đường Đức Thắng)</h4>         <b>Phân loại:</b> Tiệm thuốc     </div>     </div>`)[0];
+                popup_a63921a7c71102b162466264676e154d.setContent(html_aa4886c864f1f107af1f3f23aa7ab702);
+            
+        
+
+        marker_3b364372c3deafd9fe9a4f0ac9c9dca5.bindPopup(popup_a63921a7c71102b162466264676e154d)
+        ;
+
+        
+    
+    
+            marker_3b364372c3deafd9fe9a4f0ac9c9dca5.bindTooltip(
+                `<div>
+                     Nhà thuốc An Kang (Đường Đức Thắng)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3b364372c3deafd9fe9a4f0ac9c9dca5.setIcon(icon_4e93ab47a04d156da40728a2b584dcf6);
+            
+    
+            var marker_34211deffd28a23d58e8f93aa92fe49a = L.marker(
+                [21.0728, 105.7775],
+                {
+}
+            ).addTo(feature_group_ebdf03388261a3a5b6d17cff1fec22e0);
+        
+    
+            var icon_0ae506595de954ad4f4fa6a9ea8490b6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "medkit",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_68e4b4e9ad1d7034b40eea4eccb89a48 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_59592a9fdaa62da9cb03b69a421cf890 = $(`<div id="html_59592a9fdaa62da9cb03b69a421cf890" style="width: 100.0%; height: 100.0%;">     <div style='font-family: Arial; width: 180px;'>         <h4 style='margin-bottom: 5px; color: #2c3e50;'>Nhà thuốc Tốt Tâm Đức (Cổng Học viện Tài chính)</h4>         <b>Phân loại:</b> Tiệm thuốc     </div>     </div>`)[0];
+                popup_68e4b4e9ad1d7034b40eea4eccb89a48.setContent(html_59592a9fdaa62da9cb03b69a421cf890);
+            
+        
+
+        marker_34211deffd28a23d58e8f93aa92fe49a.bindPopup(popup_68e4b4e9ad1d7034b40eea4eccb89a48)
+        ;
+
+        
+    
+    
+            marker_34211deffd28a23d58e8f93aa92fe49a.bindTooltip(
+                `<div>
+                     Nhà thuốc Tốt Tâm Đức (Cổng Học viện Tài chính)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_34211deffd28a23d58e8f93aa92fe49a.setIcon(icon_0ae506595de954ad4f4fa6a9ea8490b6);
+            
+    
+            var marker_0bd2565d12e5b1eaecdc5609c921513f = L.marker(
+                [21.0712, 105.776],
+                {
+}
+            ).addTo(feature_group_ebdf03388261a3a5b6d17cff1fec22e0);
+        
+    
+            var icon_f8485d7ac4e64cc153c328b63b1dd737 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "medkit",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6ae7e6e9d6e21a82f8746c582ac33f6f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ad65b3a9c50a54a95e1d6828d102ab17 = $(`<div id="html_ad65b3a9c50a54a95e1d6828d102ab17" style="width: 100.0%; height: 100.0%;">     <div style='font-family: Arial; width: 180px;'>         <h4 style='margin-bottom: 5px; color: #2c3e50;'>Quầy thuốc Học viện (Đường Lê Văn Hiến)</h4>         <b>Phân loại:</b> Tiệm thuốc     </div>     </div>`)[0];
+                popup_6ae7e6e9d6e21a82f8746c582ac33f6f.setContent(html_ad65b3a9c50a54a95e1d6828d102ab17);
+            
+        
+
+        marker_0bd2565d12e5b1eaecdc5609c921513f.bindPopup(popup_6ae7e6e9d6e21a82f8746c582ac33f6f)
+        ;
+
+        
+    
+    
+            marker_0bd2565d12e5b1eaecdc5609c921513f.bindTooltip(
+                `<div>
+                     Quầy thuốc Học viện (Đường Lê Văn Hiến)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0bd2565d12e5b1eaecdc5609c921513f.setIcon(icon_f8485d7ac4e64cc153c328b63b1dd737);
+            
+    
+            feature_group_ebdf03388261a3a5b6d17cff1fec22e0.addTo(map_9e618b25ee85c4aa8712be2d08119827);
+        
+    
+            var layer_control_78aa9cc3885c2ee580b7e1a12f2fcc0f_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_e8dfd6fe3269012cd83a09e998ac66ee,
+                },
+                overlays :  {
+                    "\u2b55 V\u00f9ng b\u00e1n k\u00ednh 500m" : feature_group_167fba33992d775d6f5fa55663fb7637,
+                    "\ud83d\ude8f B\u1ebfn xe bu\u00fdt" : feature_group_7ceb9a74d8384cbf36f1f4682d1aa01a,
+                    "\ud83c\udf93 Tr\u01b0\u1eddng \u0110\u1ea1i h\u1ecdc" : feature_group_9ffaed0b4bb5ee5ba9637549e2c64e67,
+                    "\ud83d\udc8a Ti\u1ec7m thu\u1ed1c" : feature_group_ebdf03388261a3a5b6d17cff1fec22e0,
+                },
+            };
+            let layer_control_78aa9cc3885c2ee580b7e1a12f2fcc0f = L.control.layers(
+                layer_control_78aa9cc3885c2ee580b7e1a12f2fcc0f_layers.base_layers,
+                layer_control_78aa9cc3885c2ee580b7e1a12f2fcc0f_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_9e618b25ee85c4aa8712be2d08119827);
+
+        
+</script>
+</html>
