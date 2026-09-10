@@ -107,3 +107,27 @@ Chương 3 : Hệ tọa độ và phép chiếu bản đồ (CRS - COORDINATE RE
         - EPSG:4756 / EPSG:5899 (VN-2000) : Hệ tọa độ phẳng quốc gia Việt Nam bắt buộc dùng khi làm việc cơ quan nhà nước , quy hoạch đất ....
 
     4. Câu hỏi ôn tập
+
+    - Câu 1 : Tại sao chúng ta không nên sử dụng trực tiếp hệ tọa độ địa lý WGS84 (EPSG:4326) để tính toán diện tích một thửa đất hoặc chiều dài một con đường ?
+    -> Tại vì hệ tọa độ EPSG:4326 là hệ tọa độ địa lý biểu diễn hình dạng của trái đất dưới dạng 3D nên việc tính khoảng cách giữa 2 tọa độ rất phức tạp và tốn thời gian
+        + Đơn vị đo của hệ tọa độ địa lý là độ thập phân không phù hợp cho việc tính khoảnh cách hay diện tích đất đai
+    -> Hệ tọa độ địa lý phù hợp với việc thu thập dữ liệu từ vệ tinh do các dữ liệu đó đều ở hệ tọa độ địa lý
+
+    - Câu 2 : Mã định danh EPSG:3857 là gì ? Tại sao các hệ thống bản đồ web thương mại lớn như google maps lại chọn phép chiều này để hiển thị trên trình duyệt web mặc dù nó gây ra sự biến dạng diện tích rất lớn ở các khu vực gần cực bắc và cực nam ?
+    -> Mã định danh EPSG:3857 là hệ tọa độ phẳng biểu diễn hình dạng trái đất dưới dạng 2D
+    -> Lý do google map và bản đồ web ưu tiên dùng hệ tọa độ EPSG:3857
+        + Bảo toàn góc và hình dạng cục bộ : Phép chiếu này giữ nguyên góc 90 độ tại các ngã tư và hình dạng thực tế các tòa nhà , con đường khi zoom -> giữ nguyên hình dạng tòa nhà , con đường
+        + Tối ưu hóa tốc độ dựng bản đồ : Bề mặt trái đất được chiếu thành hình vuông hoàn hảo, điều này cho phép máy chủ chia bản đồ thành triệu ô lưới vuông nhỏ theo mức độ zoom khác nhau -> tăng tốc độ tải map
+
+    - Câu 3 : Khi lập trình một ứng dụng tìm kiếm các trạm xe bus gần nhất (nhập tọa độ GPS hiện tại của người dùng là kinh độ / vĩ độ  và tính toán khoảng cách bằng mét đến các trạm xung quanh) , lập trình viên phải thực hiện bước chuyển đổi hệ tọa độ nào để phép tính khoảng cách có độ chính xác cao nhất
+    -> Ban đầu hệ tọa độ địa lý cần chuyển đổi sang hệ tọa độ phẳng để có thể tính toán khoảng cách có độ chính xác cao nhất
+
+
+    5. GPS/GNSS liên kết như thế nào tới các hệ tọa độ
+        - Bản chất GPS/GNSS hoạt động 100% trên hệ tọa độ địa lý (3D)
+            + Các vệ tinh bay ngoài không gian đo khoảng cách tới thiết bị của bạn bằng sóng vô tuyến -> Sử dụng phép giao điểm các khối cầu cho ra vị trí của bạn gồm kinh độ , vĩ độ và độ cao
+            + Chuẩn hệ tọa độ mặc định mà toàn bộ hệ thống GPS/GNSS sử dụng là EPSG:4326 (hệ tọa độ địa lý toàn cầu)
+            + Đầu ra thô : Khi bật GPS chip định vị trả về kết quả dạng : 105.8542 , 21.0285 và độ cao 15m
+
+        - Mối liên hệ với hệ tọa độ phẳng (2D)
+            + Tín hiệu thu thập được từ GPS là dữ liệu tọa độ dạng độ thập phân sau đó dùng phần mềm chuyển đổi hệ tọa độ đó sang hệ tọa độ phẳng dữ liệu tọa độ dạng mét hỗ trợ việc tính đường đi hay đo đạc kích thước
