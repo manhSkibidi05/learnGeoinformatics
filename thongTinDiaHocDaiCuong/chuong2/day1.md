@@ -57,3 +57,9 @@ Review :
     tọa độ 3D (x , y , z) + Độ lệch thời gian đồng hồ (t lệch)
 
     -> Hệ tọa độ cung cấp quy tắc (gốc tọa độ , đơn vị đo) cách biểu diễn 1 tọa độ của 1 đối tượng địa lý , Để xác định tọa độ cụ thể của bản thân hay 1 đối tượng địa lý cần các thiết bị đo đạc (máy thu GNSS/GPS , máy đo đạc) sau đó từ các dữ liệu đó tính toán chính xác ra tọa độ
+
+Question : 
+
+    - Câu 1 : Các yếu tố nào ảnh hưởng được đến biểu diễn dữ liệu Raster ? Giải thích ? 
+    -> Các yếu tố ảnh hưởng đước đến biểu diễn dữ liệu raster là : 
+        + 
