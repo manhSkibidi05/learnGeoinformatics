@@ -65,7 +65,7 @@ Review :
         + B3 : Lưu trữ dữ liệu không gian và dữ liệu thuộc tính thông qua khóa id nhất định cho mỗi đối tượng tạo thành dữ liệu không gian địa lý hoàn chỉnh
         -> Tạo mối liên kết giữa dữ liệu không gian và thuộc tính thành 1 dữ liệu không gian địa lý
 
-Chương 3 : Hệ tọa độ và phép chiếu bản đồ (CRS - COORDINATE REFERENCE SYSTEM)
+GIAI ĐOẠN 3 : Hệ tọa độ và phép chiếu bản đồ (CRS - COORDINATE REFERENCE SYSTEM)
 
     1. Bản chất của hệ tọa độ : Từ trái đất đến máy tính phẳng
 
@@ -105,6 +105,14 @@ Chương 3 : Hệ tọa độ và phép chiếu bản đồ (CRS - COORDINATE RE
         - EPSG:4326 (WGS 84) : Hệ tọa độ địa lý toàn cầu , đây là hệ tọa độ mặc định mà chip GPS trên điện thoại trả về cũng là chuẩn tọa độ file GeoJSON
         - EPSG:3857 : Hệ tọa độ phẳng dùng cho bản đồ web
         - EPSG:4756 / EPSG:5899 (VN-2000) : Hệ tọa độ phẳng quốc gia Việt Nam bắt buộc dùng khi làm việc cơ quan nhà nước , quy hoạch đất ....
+
+    4. Phép chiếu bản đồ 
+        - Là phương pháp toán học giúp chuyển đổi bề mặt cong 3D của trái đất (ellipsoid) thành mặt phẳng 2D 
+        -> Vì không thể trải phẳng 1 quả cầu mà không làm rách hay biến dạng nó , mọi phép chiếu bắt buộc phải chấp nhận biến dạng một vài yếu tố : Góc/hình dạng , diện tích , khoảng cách
+
+        - 2 phép chiếu phổ biến là :
+            + Phép chiếu Gauss - Kruger : Phổ biến tại Nga và Đông Âu và hệ tọa độ HN-72 cũ của Việt Nam sử dụng phép chiếu này
+            + Phép chiếu UTM : Tiêu chuẩn quốc tế và hệ tọa độ VN-2000 hiện tại của Việt Nam sử dụng phép chiếu này 
 
     4. Câu hỏi ôn tập
 

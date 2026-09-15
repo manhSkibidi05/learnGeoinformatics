@@ -28,7 +28,7 @@ Review Ngày 1 :
 
     - Trí tuệ là : Bao gồm hiểu biết + hành động đúng đắn , Khi người dùng có trí tuệ dựa trên hiểu biết về 1 vấn đề thì họ sẽ đưa ra hành động khi gặp vấn đề đó
 
-Chương 2 : Mô hình và định dạng dữ liệu không gian
+GIAI ĐOẠN 2 (TIẾP) : Mô hình và định dạng dữ liệu không gian
 
     1. Bản chất của dữ liệu không gian địa lý (Geospatial Data)
         - Mô tả hóa là : Quá trình thu thập , liệt kê , diễn đạt các đặc điểm của 1 đối tượng thực tế dưới dạng tư duy con người (văn bản , lời nói , ghi chú)

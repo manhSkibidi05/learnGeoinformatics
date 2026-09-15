@@ -1,4 +1,6 @@
-Chương 1 : Công nghệ thông tin địa học và hệ sinh thái 3S
+CHƯƠNG 1 : CÔNG NGHỆ THÔNG TIN ĐỊA HỌC VÀ DỮ LIỆU KHÔNG GIAN 
+
+GIAI ĐOẠN 1 : Công nghệ thông tin địa học và hệ sinh thái 3S
 
     1. Khái niệm về công nghệ thông tin địa học
         - Công nghệ thông tin là : Là ngành sử dụng các thiết bị công nghệ như máy tính , phần mềm , ... để thu thập , lưu trữ , xử lý , bảo vệ và truyền tải
@@ -75,7 +77,7 @@ Chương 1 : Công nghệ thông tin địa học và hệ sinh thái 3S
             trình tối ưu cho tài xế
         - RS - Remote sensing (trực quan hóa thực địa) : Bản đồ nền vệ tinh (sản phẩm của viễn thám) được tích hợp phía dưới ứng dụng giúp khách hàng và shipper nhìn rõ hình ảnh thực địa (nhà cửa , cây cối , đường...) để dễ dàng giao và nhận hàng ở các khu vực ngõ , hẻm phức tạp
 
-Chương 2 : Mô hình và định dạng dữ liệu không gian
+GIAI ĐOẠN 2 : Mô hình và định dạng dữ liệu không gian
 
     * Dữ liệu là gì ? Thông tin là gì ? -> Dữ liệu không gian là gì ?
 

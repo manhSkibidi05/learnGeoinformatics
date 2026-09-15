@@ -47,7 +47,7 @@ Review :
                 + Vị trí tương đối : mối quan hệ không gian với các đối tượng khác
             - Kích thước , hình dáng
         + Dữ liệu thuộc tính (Attribute data) : trả lời câu hỏi cái gì , như thế nào
-            - Thông tin mô tả về đối tượng :
+            - Thông tin mô tả về đặc điểm của đối tượng :
                 + tên
                 + năm xây dựng
                 + diện tích...
@@ -60,6 +60,31 @@ Review :
 
 Question : 
 
-    - Câu 1 : Các yếu tố nào ảnh hưởng được đến biểu diễn dữ liệu Raster ? Giải thích ? 
+    Câu 1 : Các yếu tố nào ảnh hưởng được đến biểu diễn dữ liệu Raster ? Giải thích ? 
     -> Các yếu tố ảnh hưởng đước đến biểu diễn dữ liệu raster là : 
-        + 
+        + Kích thước của 1 ô pixel -> kích thước càng nhỏ độ phân dải càng lớn 
+        + Kích thước vùng phủ : Phạm vi không gian mà toàn bộ ma trận Raster bao phủ 
+        + Giá trị 1 ô lưới : Dữ liệu liên tục (số thực) hay dữ liệu rời rạc (số nguyên) , kiểu dữ liệu lưu trữ (8bit , 16bit...) quyết định tới dải giá trị màu
+        + Điểm mốc tọa độ : Quyết định vị trí của ma trận ô lưới trên hệ tọa độ thực địa
+
+    Câu 2 : Dữ liệu dạng điểm và dạng vùng có thể chuyển đổi qua lại với nhau không ? Giải thích ?
+    -> Có thể chuyển đổi qua lại nhau vì dữ liệu dạng điểm hay vùng gồm 2 khía cạnh : 
+        1. Chuyển đổi theo tỷ lệ bản đồ 
+            vd : tphn với bản đồ thế giới rất nhỏ nên dữ liệu dạng điểm , với bản đồ Việt Nam tphn rất to nên dữ liệu dạng vùng
+        2. Chuyển đổi bẳng kĩ thuật / thuật toán GIS 
+            + Từ vùng sang điểm : Sử dụng thuật toán Tâm vùng để thu gọn 1 polygon thành 1 point đại diện
+            + Từ điểm sang vùng : 
+                -> Tạo vùng đệm (buffer) : Tạo vùng với bán kính r quanh điểm ban đầu
+                -> Sử dụng thuật toán Nội suy : Tối ưu hóa từ tập hợp các điểm đo đạc để tạo thành không gian bao phủ 
+
+    Câu 3 : Với bảng dữ liệu thuộc tính , hàng ngang , cột dọc cho biết điều gì ? Có thể thực hiện thao tác nào với bảng thuộc tính ? 
+    -> Ý nghĩa hàng và cột :
+        + Hàng ngang : 1 bản ghi đại diện cho 1 đối tượng địa lý cụ thể , mỗi hàng nối 1-1 với 1 hình học trên bản đồ qua mã ID
+        + Cột dọc : 1 trường dữ liệu đại diện cho 1 thuộc tính của tất cả đối tượng 
+    -> Các thao tác có thể thực hiện với bảng thuộc tính : 
+        + Thao tác cơ bản : Thêm , sửa , xóa các bản ghi hoặc trường dữ liệu 
+        + Truy vấn và lọc : Lọc đối tượng theo điều kiện nhất định 
+        + Tính toán số liệu : Tính toán giá trị cột tự động bằng công thức toán học 
+        + Liên kết dữ liệu : Nối bảng thuộc tính với bảng dữ liệu bên ngoài thông qua trường khóa chung
+        + Thống kê dữ liệu : Tính tổng , trung bình , min , max các cột dữ liệu của mỗi thuộc tính   
+
