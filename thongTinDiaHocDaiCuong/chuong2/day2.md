@@ -59,3 +59,29 @@ GIAI ĐOẠN 1 : Tổng quan hệ thống định vị vệ tinh GNSS và Nguyê
 
     - Dựa trên thuật toán tam giác đo đạc không gian cần ít nhất thu tín hiệu 4 vệ tinh cùng lúc : 
     -> Để xác định vị trí chính xác không gian 3D bao gồm kinh độ , vĩ độ , độ cao và quan trọng nhất là khắc phục / đồng bộ sai số đồng hồ giữa máy thu và đồng hồ nguyên tử trên vệ tinh 
+
+    4. Câu hỏi ôn tập 
+        Câu 1 : Phân biệt sự khác nhau giữa khái niệm GNSS và GPS . Kể tên 4 hệ thống GNSS lớn nhất trên thế giới hiện nay 
+        -> Khái niệm của GNSS là hệ thống vệ tinh dẫn đường toàn cầu , GNSS là từ khóa chỉ chung tất cả các hệ thống vệ tinh trên thế giới
+        -> Khái niệm của GPS là hệ thống định vị toàn cầu , GPS là từ khóa chỉ 1 hệ thống vệ tinh định vị của Mỹ 
+        -> 4 hệ thống GNSS lớn nhất trên thế giới hiện nay : GPS , Galileo , Bắc đẩu , Glonass
+
+        Câu 2 : Trình bày thông số kỹ thuật của phân đoạn không gian trong hệ thống GPS (số lượng vệ tinh , số mặt phẳng quỹ đạo , độ cao và chu kỳ quay)
+        - Thông số kỹ thuật của phân đoạn không gian trong hệ thống GPS là : 
+            + Số lượng vệ tinh : 24 vệ tinh
+            + Số mặt phẳng quỹ đạo : 6 mặt phẳng cách đều nhau 
+            + Độ cao : 20.200 km
+            + Chu kỳ quay : 718 phút (xấp xỉ 12h) . Cụ thể mỗi vệ tinh sẽ bay qua đúng 1 điểm cho trước trên mặt đất mỗi lần 1 ngày
+        -> Với thông sỗ kỹ thuật trên đảm bảo mọi thời điểm ở mọi vị trí trên thế giới đều nhìn thấy ít nhất 4 vệ tinh trên trời  
+
+        Câu 3 : Tại sao khi định vị mặt đất bằng GPS , thiết bị thu cần nhận tín hiệu ít nhất từ 4 vệ tinh thay vì 3 vệ tinh 
+        - Quy trình xác định vị trí của 1 đối tượng trên mặt đất bằng GPS : 
+            Giai đoạn 1 : Phát tín hiệu 
+                + Vệ tinh luôn phát ra tín hiệu gồm : T phát (thời gian lúc phát ra tín hiệu) , Tọa độ (x , y , z) của vệ tinh thời điểm phát 
+
+            Giai đoạn 2 : Nhận tín hiệu 
+                + Sử dụng thiết bị thu / smart phone mở định vị GPS : Thu tín hiệu từ vệ tinh và nhận được T thu (thời gian lúc thu được tín hiệu)
+                -> Tính được khoảng cách đến vệ tinh bằng công thức : Khoảng cách = vận tốc ánh sáng X (T thu - T phát)
+
+                + Nhưng để có thể tính ra được tọa độ của đối tượng trên mặt đất cần thu tín hiệu ít nhất từ 4 vệ tinh vì : 
+                -> Giải phương trình  4 ẩn gồm x , y ,z và t : x , y ,z để xác định tọa độ của đối tượng còn t giúp tránh sai số về thời gian do đồng hồ trên vệ tinh  là đồng hồ nguyên tử thời gian chính xác , đồng hồ từ thiết bị thu đồng hồ thạch anh có thể có sai số 
