@@ -45,3 +45,27 @@ Giai đoạn 2 : Phân tích nguồn sai số và độ chính xác định vị
         + DGPS (Differential GPS): Sử dụng một trạm Base đặt cố định tại tọa độ chuẩn để đo sai số thực tế, sau đó phát sóng hiệu chỉnh cho trạm Rover di động $\rightarrow$ Cải thiện độ chính xác xuống mức decimet (dm).
 
         + RTK (Real-Time Kinematic): Đo trực tiếp góc pha của sóng mang ($L_1/L_2$) thay vì chỉ đo mã tín hiệu thô $\rightarrow$ Đạt độ chính xác tuyệt đối ở mức centimet (cm) (dùng cho xe tự lái, máy bay drone trắc địa).
+
+    4. Câu hỏi ôn tập cuối bài 
+
+    Câu 1 : Phân biệt sự khác nhau giữa Accuracy (độ chính xác) và Precision (Sự tương đồng/ độ lặp) trong các lần đo đạc GPS . Các thiết bị smartphone dạo phố thông thường đạt được trạng thái nào tốt hơn ? 
+    - Độ chính xác : Là vị trí của đối tượng đo được bằng thiết bị so với vị trí ngoài thực địa của đối tượng đó 
+    -> độ chính xác càng cao vị trí đo bằng thiết bị càng tương đồng với vị trí ngoài thực địa 
+
+    - Sự tương đồng : Là các vị trí của đối tượng đo được bằng thiết bị có tương đồng với nhau qua nhiều lần đo đạc GPS 
+    -> nếu đo nhiều lại tại 1 điểm mà các kết quả thu được nằm tập trung sát nhau thì sự tương đồng cao  
+    
+    - Các thiết bị smartphone dạo phố phổ thông thường thu được vị trí của đối tượng có độ chính xác thấp và sự tương đồng cao do ảnh hưởng bởi nhiễu môi trường , đa đường dẫn và các giới hạn về chip ăng-ten thu tín hiệu thô dẫn đến độ chính xác thấp 
+
+    Câu 2 : Giải thích nguyên nhân gây ra sai số đường dẫn (multipath). Tại sao hiện tượng này lại xảy ra phổ biến và khó khắc phục khi định vị trong các đô thị có nhà cao tầng 
+    - Nguyên nhân dẫn đến sai số đường dẫn là khi tín hiệu từ vệ tinh đi thẳng tới máy thu bị va đập , phản xạ qua các bề mặt xung quanh , các bề mặt gây phản xạ gồm kính , tường bê tông ...
+    -> Cơ chế gây ra sai số là sóng phản xạ đi đường vòng thay vì đi đường thẳng gây mất thời gian truyền hơn , khi đó máy tính lấy thông số này tính ra khoảng cách đến vệ tinh dài hơn thực tế , tạo ra các bóng ma tọa độ hoặc hiện tượng trôi tọa độ 
+
+    - Hiện tượng này lại phổ biến và khó khắc phục định vị trong các đô thi có nhà cao tầng do ở đó có nhiều kính 
+
+    Câu 3 : Chỉ số PDOP phản ảnh điều gì trong định vị vệ tinh ? So sánh độ chính xác tọa độ thu được khi vệ tinh tập trung ở đỉnh đầu với  phân bố góc mở rộng trên bầu trời . Ngưỡng PDOP tối đa phép khi thành lập bản đồ là bao nhiêu ? 
+    - Chỉ số PDOP phản ánh sự phân bố về vị trí của các vệ tinh trên bầu trời tại 1 thời điểm 
+
+    - Độ chính xác tọa độ thu được khi vệ tinh tập trung đỉnh đầu thì độ chính xác thấp , khi vệ tinh phân bố góc mở rộng trên bầu trời độ chính xác cao 
+
+    - Ngưỡng PDOP tối đa phải nhỏ hơn 7.0 thì mới đủ điều kiện thành lập bản đồ 
