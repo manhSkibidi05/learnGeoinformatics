@@ -11,8 +11,8 @@ INPUT_FILE = Path(__file__).with_name("12_nmea_100_points.txt")
 OUTPUT_CSV = Path(__file__).with_name("gps_analysis.csv")
 OUTPUT_GEOJSON = Path(__file__).with_name("gps_trajectory.geojson")
 OUTPUT_MAP = Path(__file__).with_name("gps_stay_points_map.html")
-STAY_DURATION_SECONDS = 5 * 60
-STAY_DISTANCE_METERS = 100.0
+STAY_DURATION_SECONDS = 1 * 60
+STAY_DISTANCE_METERS = 20.0
 
 
 def nmea_to_decimal(value, direction):
@@ -61,16 +61,59 @@ def analyze_trajectory(gps_points):
         else 0,
         axis=1,
     )
-    points["is_stay"] = (
-        (points["time_diff_s"] >= STAY_DURATION_SECONDS)
-        & (points["distance_m"] <= STAY_DISTANCE_METERS)
+    points["is_stay"] = False
+    stop_groups = []
+    start_index = 0
+
+    while start_index < len(points):
+        end_index = start_index
+        while end_index + 1 < len(points):
+            candidate_cluster = points.iloc[start_index : end_index + 2]
+            candidate_center = candidate_cluster.geometry.union_all().centroid
+            max_distance = candidate_cluster.geometry.distance(candidate_center).max()
+            if max_distance > STAY_DISTANCE_METERS:
+                break
+            end_index += 1
+
+        cluster = points.iloc[start_index : end_index + 1]
+        duration_s = (cluster["time"].iloc[-1] - cluster["time"].iloc[0]).total_seconds()
+        if duration_s >= STAY_DURATION_SECONDS:
+            points.loc[cluster.index, "is_stay"] = True
+            center = cluster.geometry.union_all().centroid
+            center_wgs84 = gpd.GeoSeries([center], crs=points.crs).to_crs(
+                epsg=4326
+            ).iloc[0]
+            stop_groups.append(
+                {
+                    "start_time": cluster["time"].iloc[0],
+                    "end_time": cluster["time"].iloc[-1],
+                    "duration_s": duration_s,
+                    "latitude": center_wgs84.y,
+                    "longitude": center_wgs84.x,
+                    "geometry": center_wgs84,
+                }
+            )
+
+        start_index = end_index + 1
+
+    stay_points = gpd.GeoDataFrame(
+        stop_groups,
+        columns=[
+            "start_time",
+            "end_time",
+            "duration_s",
+            "latitude",
+            "longitude",
+            "geometry",
+        ],
+        geometry="geometry",
+        crs="EPSG:4326",
     )
-    return points
+    return points, stay_points
 
 
 gps_points = parse_gpgga_file(INPUT_FILE)
-analyzed_points = analyze_trajectory(gps_points)
-stay_points = analyzed_points[analyzed_points["is_stay"]].copy()
+analyzed_points, stay_points = analyze_trajectory(gps_points)
 
 total_distance_m = analyzed_points["distance_m"].sum()
 total_time_s = (gps_points["time"].max() - gps_points["time"].min()).total_seconds()
@@ -90,23 +133,36 @@ if stay_points.empty:
 else:
     for _, row in stay_points.iterrows():
         print(
-            f"- {row['time'].strftime('%H:%M:%S')}: "
+            f"- {row['start_time'].strftime('%H:%M:%S')} - "
+            f"{row['end_time'].strftime('%H:%M:%S')}: "
             f"{row['latitude']:.6f}, {row['longitude']:.6f}; "
-            f"dung {row['time_diff_s'] / 60:.1f} phut, "
-            f"dich chuyen {row['distance_m']:.1f} m"
+            f"dung {row['duration_s'] / 60:.1f} phut"
         )
 
-gps_points.drop(columns="geometry").to_csv(OUTPUT_CSV, index=False)
+analyzed_points.drop(columns="geometry").to_csv(OUTPUT_CSV, index=False)
 gps_points.to_file(OUTPUT_GEOJSON, driver="GeoJSON")
 
 map_center = [gps_points.iloc[0]["latitude"], gps_points.iloc[0]["longitude"]]
 gps_map = folium.Map(location=map_center, zoom_start=14)
-folium.PolyLine(
-    [(row.latitude, row.longitude) for row in gps_points.itertuples()],
-    color="blue",
-    weight=3,
-    tooltip="Chuoi GPS",
-).add_to(gps_map)
+trajectory_segment = []
+for row in analyzed_points.itertuples():
+    if trajectory_segment and row.distance_m > STAY_DISTANCE_METERS:
+        folium.PolyLine(
+            trajectory_segment,
+            color="red",
+            weight=3,
+            tooltip="Chuoi GPS gan nhau",
+        ).add_to(gps_map)
+        trajectory_segment = []
+    trajectory_segment.append((row.latitude, row.longitude))
+
+if len(trajectory_segment) > 1:
+    folium.PolyLine(
+        trajectory_segment,
+        color="red",
+        weight=3,
+        tooltip="Chuoi GPS gan nhau",
+    ).add_to(gps_map)
 
 for row in gps_points.itertuples():
     folium.CircleMarker(
