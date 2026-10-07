@@ -43,4 +43,86 @@
     + Hệ tọa độ phẳng : Trái đất trải phẳng và biểu diễn dưới dạng 2D , đơn vị là mét (meter)
     -> Sử dụng hệ tọa độ này để tính toán hình học như tính khoảng cách , diện tích ... giúp việc quy hoạch đô thị 
 
-- Mô hình là cách tư duy , định dạng là cách đóng gói 
+- Mô hình là cách tư duy , định dạng là cách đóng gói ? 
+
+
+# Chương 3 : Remote Sensing 
+
+## Giai đoạn 1 : Cơ sở vật lý và nguyên lý viễn thám 
+- Bản chất vật lý của công nghệ viễn thám , cấu trúc hệ thống thu nhận dữ liệu từ xa và giải mã nguyên lý 'dấu vết phổ' giúp máy tính phân biệt các đối tượng
+trên bề mặt trái đất 
+
+1. Khái niệm viễn thám (Remote sensing - RS) 
+- Định nghĩa : Kỹ thuật thu nhận các thông tin của đối tượng địa lý hoặc hiện tượng trên trái đất và các hành tinh khác mà không cần tiếp xúc vào chúng 
+- Nguyên lý : Việc thu nhận thông tin của đối tượng địa lý mà không cần trực tiếp tiếp xúc vào chúng thực chất là việc thu nhận năng lượng phản xạ quang phổ điện từ hoặc bức xạ nhiệt phát ra từ các đối tượng đó 
+    + Năng lượng phản xạ quang phổ điện từ : Là sóng điện từ phản xạ lại từ một đối tượng khi được chiếu sóng điện từ có thể từ mặt trời hoặc từ chính thiết bị viễn thám 
+    -> Mỗi đối tượng địa lý khi được chiếu sóng điện từ sẽ hấp thụ một phần và phản xạ lại một phần từ phần phản xạ đó được gọi là 'dấu hiệu quang phổ' nó được coi như là id sóng của đối tượng này 
+    -> Công việc viễn thám còn lại là sử dụng cảm biến để thu thập / chụp mã id sóng đó từ đó có thể suy ra đối tượng là gì mà không cần trực tiếp đến nơi
+
+    + Bức xạ nhiệt : Là nhiệt độ phát ra từ một đối tượng địa lý từ đó và được thiết bị viễn thám thu nhận được thông tin đó từ đó xác định được nhiệt độ bề mặt và mức độ tỏa nhiệt của đối tượng 
+    -> Khác với thu thập bằng viễn thám phản xạ chỉ thu nhận vào ban ngày thì viễn thám nhiệt thu nhập cả ngày lẫn đêm 24/7
+
+- Thông tin thu nhận được từ viễn thám gồm : Dấu hiệu quang phổ là dải màu sắc đặc trưng -> dựa trên sóng phản xạ lại , nhiệt độ bề mặt , độ ẩm , độ nhám khối sinh thực vật 
+
+2. Bốn thành phần cơ bản của hệ thống viễn thám 
+- Hệ thống viễn thám hoàn chỉnh sẽ hoạt động dựa trên 4 thành phần cơ bản liên kết chặt chẽ với nhau bao gồm : 
+    1. Nguồn năng lượng 
+        - Vai trò : Cung cấp sóng điện từ chiếu đến đối tượng để thu nhận tín hiệu 
+        - Phân loại : 
+            + Nguồn năng lượng tự nhiên : Chủ yếu mặt trời phát ra sóng điện từ (as nhìn thấy , tia hồng ngoại...) hoặc nhiệt độ đối tượng tự tỏa ra 
+            + Nguồn năng lượng nhân tạo : Thiết bị tự phát ra sóng (sóng radar hoặc tia laser) xuống mặt đất 
+
+    2. Đối tượng nghiên cứu 
+        - Vai trò : Xác nhận đối tượng cần nghiên cứu như bề mặt trái đất , rừng cây , nguồn nước...
+        - Cơ chế : Khi nhận năng lượng từ nguồn phát , mỗi đối tượng sẽ hấp thụ một phần và phản xạ lại một phần đặc trưng riêng biệt nó được gọi là dấu hiệu quang phổ 
+
+    3. Cảm biến và vật mang 
+        - Cảm biến : Thiết bị đo đạc và ghi nhận năng lượng sóng điện từ (máy ảnh đa phổ , cảm biến nhiệt...)
+        - Vật mang : Phương tiện mang cảm biến lên không gian (vệ tinh , máy bay , trạm mặt đất...)
+        -> Khi kết hợp vật mang và cảm biến thì nó được coi là một thiết bị viễn thám 
+
+    4. Hệ thống thu nhận , xử lý và ứng dụng 
+        - Truyền dẫn và thu nhận : Tín hiệu truyền từ vệ tinh xuống trạm thu mặt đất dưới dạng dữ liệu thô
+        - Xử lý và giải mã : Chuyên gia phần mềm GIS / viễn thám thực hiện hiệu chỉnh khí quyển , giải mã sóng thành các thông tin thực tế (tọa độ , chỉ số NDVI , nhiệt độ bề mặt...)
+        - Ứng dụng : Xuất bản đồ , giúp đưa ra lựa chọn không gian ... 
+
+3. Phân loại công nghệ viễn thám 
+- Công nghệ viễn thám được phân loại dựa trên nguồn cung cấp năng lượng sóng điện từ từ đó thu nhận được thông tin khác nhau về đối tượng 
+
+    1. Viễn thám bị động 
+    - Cảm biến không tự phát ra năng lượng mà cảm biến đóng vai trò hoàn toàn máy thu ghi nhận năng lượng phản xạ lại từ mặt trời chiếu tới đối tượng 
+
+    - Nguyên lý hoạt động : 
+    Mặt trời - chiếu sáng - > Bề mặt trái đất - bật ngược - > cảm biến thu thập năng lượng bật ngược lại đó 
+
+    - Đặc điểm : 
+        + phụ thuộc năng lượng tự nhiên 
+        + chỉ thu dải sóng phản xạ (RGB , NIR) và vào ban ngày khi có as mặt trời
+        + bị cản trở mạnh bới điều kiện thời tiết (mây , khói , sương mù , mưa)
+    
+    - Công nghệ và thiết bị điển hình : 
+        + camera quang học đa phổ , cảm biến nhiệt lượng
+        + vệ tinh đại diện : landsat , sentinel-2...
+    
+    -> Viễn thám bị động cho chúng ta biết đối tượng này là cái gì và trạng thái sinh hóa / nhiệt độ ra sao (màu gì , cây yếu hay khỏe , nóng hay lạnh)
+
+    2. Viễn thám chủ động 
+    - Cảm biến tích hợp nguồn phát sóng điện từ riêng , chủ động bắn ra các chùm sóng / tia năng lượng xuống bề mặt trái đất và đo đạc tín hiệu phản hồi ngược trở lại 
+
+    - Nguyên lý hoạt động : 
+    Cảm biến phát sóng - bắn nl xuống - > đối tượng địa lý - phản hổi nl - > cảm biến đo đạc
+
+    - Đặc điểm : 
+        + chủ động 100% về nguồn phát và không phụ thuộc vào thời gian có thể hoạt động cả ngày và đêm
+        + sử dụng dải sóng xuên thấu mây , mưa... không bị cản trở bởi thời tiết
+        + đo được chính xác độ cao 3D , cấu trúc bề mặt và độ nhám
+
+    - Công nghệ & Thiết bị điển hình:
+        + Radar / SAR (Synthetic Aperture Radar): Phát sóng vi ba thu tín hiệu tán xạ ngược.
+        + LiDAR (Light Detection and Ranging): Phát các xung tia Laser để đo khoảng cách và tạo đám mây điểm 3D.
+        + Vệ tinh đại diện: Sentinel-1 (SAR), TerraSAR-X, RADARSAT, ICESat (LiDAR).
+
+    -> Viễn thám chủ động cho chúng ta biết hình thể cơ học và cấu trúc 3D của đối tượng (cao bao nhiêu , gồ gề thế nào , chứa bn nước bên trong)
+
+4. 
+
