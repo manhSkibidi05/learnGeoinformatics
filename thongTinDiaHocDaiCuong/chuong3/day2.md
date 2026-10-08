@@ -82,4 +82,42 @@
     1. Phát triển các chỉ số không gian : NDVI (chỉ số thực vật) , NDWI 
     2. Phân loại ảnh vệ tinh tự động 
 
-## Giai đoạn 2 : 
+## Giai đoạn 2 : Độ phân giải ảnh và hệ thống vệ tinh landsat 8/9 
+- Các thông số kỹ thuật quyết định chất lượng ảnh viễn thám , tìm hiểu cấu trúc dải phổ của hệ thống vệ tinh landsat 8/9 và cách ghép các dải phổ thành tổ hợp màu phục vụ từng mục đích phân tích địa lý cụ thể 
+
+1. Độ phân giải của ảnh viễn thám 
+- Hệ thống viễn thám sẽ trả lại ảnh viễn thám sau khi thu nhận thông tin và ảnh viễn thám thu được đó sẽ sở hữu 4 độ phân giải ảnh cố định do phần cứng của vệ tinh đó quyết định , 4 độ phân giải ảnh này sẽ quyết định đến việc lựa chọn ảnh có loại độ phân giải nào cao nhất / thấp nhất sao cho phù hợp với mục đích bài toán 
+- vd : Bài toán quản lí địa chính và đô thị cần thấy rõ từng căn nhà , con đường -> độ phân giải ưu tiên không gian siêu cao , ảnh lựa chọn : worldWiew 
+
+- 4 độ phân giải của ảnh viễn thám thu được sẽ quyết định chất lượng ảnh và khả năng ứng dụng ảnh đó : 
+    1. Độ phân giải không gian 
+        - Khái niệm : Độ phân giải không gian là thước quy định tỷ lệ 1 pixel (điểm ảnh) có kích thước bao nhiêu tương ứng với 1 vị trí trên bề mặt trái đất 
+        -> Một ảnh có GSD là 10 m thì mỗi pixel đại điện cho 1 vị trí trên mặt đất có kích thước 100m vuông 
+        -> Giá trị GSD càng nhỏ thì lúc này độ phân giải không gian càng cao , bức ảnh càng sắc nét và cho phép phân biệt các vật thể nhỏ hơn 
+
+    2. Độ phân giải quang phổ 
+        - Khái niệm : Độ phân giải quang phổ là hộp bút màu quy định số màu trong 1 pixel (điểm ảnh)
+        -> Độ phân giải quang phổ càng cao 1 pixel sẽ không chỉ chứa 1 màu cơ bản mà chứa hàng chục / trăm màu trồng lên nhau bên trong 1 điểm ảnh 
+        -> Khi độ phân giải quang phổ cao thì chứa nhiều ảnh bên trong 1 pixel từ đó có thể dễ dàng xác định đối tượng là gì thông qua màu sắc 
+
+    3. Độ phân giải bức xạ
+        - Khái niệm : Độ phân giải bức xạ là khả năng phân biệt sáng - tối (đậm - nhạt) của 1 màu sắc trong điểm ảnh 
+        -> Độ phân giải quang phổ cho biết một điểm ảnh chứa bao nhiêu màu thì độ phân giải bức xạ cho biết mỗi màu đó có bao nhiêu sắc độ (từ cực sáng đến cực tối)
+        -> Độ phân giải bức xạ càng lớn thì giúp nhìn rõ các chi tiết ẩn trong vùng quá tối hoặc vùng quá sáng 
+
+    4. Độ phân giải thời gian 
+        - Khái niệm : Độ phân giải thời gian là tần suất hay khoảng thời gian cố định mà vệ tinh quay trở lại vị trí chỉ định lần thứ 2 
+        -> Độ phân giải thời gian cao thì khoảng thời gian cần đợi càng giảm vì vệ tinh quay lại vị trí cũ nhanh hơn 
+        -> Độ phân giải thời gian giúp theo dõi tham họa / nông nghiệp cách liên tục giúp xử lý tình huống cách nhanh chóng 
+
+2. Vệ tinh Landsat 8/9 và cấu trúc dải phổ 
+- Hệ thống vệ tinh Landsat do NASA và USGS (mỹ) vận hành là nguồn cung cấp dữ liệu ảnh vệ tinh tài nguyên với độ phân giải trung bình được cung cấp miễn phí phổ biến nhất trên thế giới .
+    + Landsat 8 phóng 2013 Landsat 9 phóng 2021 là phiên bản cải tiến song sinh của Landsat 8 , giữ nguyên cấu trúc kênh sóng để đảm bảo tính liên tục của chuỗi dữ liệu không gian 
+    + 2 vệ tinh đều mang 2 cảm biến chính : 
+        - OLI / OLI-2 : Cảm biến quang học đa phổ (bands 1 - 9)
+        - TIRS / TIRS-2 : Cảm biến hồng ngoại nhiệt (bands 10 - 11)
+    + Chu kì chụp lặp : 16 ngày 
+
+- Cấu trúc dải phổ là : Tập hợp các dải sóng điện từ (ánh sáng nhìn thấy , hồng ngoại) mà vệ tinh chụp lại
+
+3. Kỹ thuật tổ hợp dải màu 
