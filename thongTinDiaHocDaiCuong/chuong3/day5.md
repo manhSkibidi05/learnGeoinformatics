@@ -74,4 +74,11 @@
 
 
 4. Xử lý chuỗi dữ liệu GPS (Trajectory Data , Map matching , lọc nhiễu tọa độ) 
-    
+    - Khi có nhiều điểm GPS gửi về ta có một Tracjectory (quỹ đạo) -> Chuỗi các điểm theo thời gian nhưng dữ liệu thô thường có nhiều nhiễu và sai lệch cần xử lý qua các bước 
+
+# Tổng ôn chương 3 : 
+
+1. Nguyên lý viễn thám , phổ điện từ và các kênh phổ (bands) 
+- Nguyên lý viễn thám : Viễn thám thu thập dữ liệu thông qua cảm biến , các dữ liệu đó hầu hết từ ánh sáng mặt trời chiếu xuống đối tượng sau đó đối tượng hấp thụ 1 phần phản xạ lại 1 phần và phần đó sẽ thu được bằng cảm biến 
+- Phổ điện từ : Dải liên tục của tất cả các loại sóng điện từ xếp từ sóng dài nhất đến sóng ngắn nhất
+- Kênh phổ : Là một khoảng bước sóng hẹp trong phổ điện từ mà cảm biến trên vệ tinh được thiết kế để thu nhận riêng biệt 
