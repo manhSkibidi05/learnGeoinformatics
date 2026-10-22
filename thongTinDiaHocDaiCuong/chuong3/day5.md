@@ -78,10 +78,29 @@
 
 # Tổng ôn chương 3 : 
 
-1. Nguyên lý viễn thám , phổ điện từ và các kênh phổ (bands) 
-- Nguyên lý viễn thám : Viễn thám thu thập dữ liệu thông qua cảm biến , các dữ liệu đó hầu hết từ ánh sáng mặt trời chiếu xuống đối tượng sau đó đối tượng hấp thụ 1 phần phản xạ lại 1 phần và phần đó sẽ thu được bằng cảm biến 
-- Phổ điện từ : Dải liên tục của tất cả các loại sóng điện từ xếp từ sóng dài nhất đến sóng ngắn nhất
-- Kênh phổ : Là một khoảng bước sóng hẹp trong phổ điện từ mà cảm biến trên vệ tinh được thiết kế để thu nhận riêng biệt 
+- Câu 1 : Phân biệt 4 loại độ phân giản viễn thám . Khi độ phân giải không gian tăng từ 30m -> 15m thì kích thước 1 pixel ngoài thực địa thay đổi ra sao ? 
+-> 4 loại độ phân giản viễn thám : 
+    + Độ phân giải không gian : Quyết định tới kích thước 1 pixel (điểm ảnh) tương đương với kích thước của vị trí trên bề mặt trái đất được biểu diễn trên ảnh 
+    -> Độ phân giải không gian càng cao các đối tượng hiện thị rõ nét 
+    + Độ phân giải quang phổ : Quyết định tới số lượng kênh sóng (band) có trong 1 pixel  
+    -> Độ phân giải quang phổ càng cao số kênh sóng càng nhiều thì càng dễ dàng nhận diện đối tượng trong ảnh 
+    + Độ phân giải bức xạ : Quyết định tới độ sáng- tối của màu sắc của ảnh , một màu có thể có độ sáng tối từ cực sàng tới cực tối 
+    -> Độ phân giải bức xạ càng cao thì độ sáng tối càng rõ giúp dễ dàng phân biệt màu sắc 
+    + Độ phân giải thời gian : Quyết định tới chu kì quay lại của vệ tinh viễn thám và thực hiện thu nhận dữ liệu sau đó gửi về mặt đất 
+    -> Độ phân giải thời gian càng cao thì thời gian phải đợi càng giảm 
+-> Khi độ phân giải không gian tăng từ 30m -> 15m thì kích thước 1 pixel ngoài thực địa giảm từ 900m vuông xuống 225m vuống 1 pixel từ đó ảnh rõ ràng hơn 
 
-2. 
+- Câu 2 : Kể tên các dải phổ chính của cảm biến OLI trên Landsat 8/9 (từ band 2 -> band 5) . Dải nào có độ phân giải không gian cao nhất 
+-> Dải phổ chính cảm biến OLI trên vệ tinh landsat 8/9 (band 2 -> band 5) :
+    + Band 2 : Blue 
+    + Band 3 : Green
+    + Band 4 : Red
+    + Band 5 : cận hồng ngoại (NIR)
+-> Dải có độ phân giải cao nhất là band 8 
+
+- Câu 3 : Kỹ thuật tổ hợp màu là gì ? So sánh sự khác nhau về màu sắc hiện thị của thảm thực vật giữa tổ hợp tự nhiện (4-3-2) và tổ hợp thực vật (5-4-3)
+-> Kỹ thuật tổ hợp màu là : Kỹ thuật gán các dải sóng (dải phổ) vào bộ màu cho máy tính nhận diện được R-G-B từ đó thu được ảnh viễn thám màu sắc giúp dễ dàng quan sát các đối tượng hơn 
+- So sánh màu sắc hiển thị của thảm thực vật giữa tổ hợp tự nhiên (4-3-2) và tổ hợp thực vật (5-4-3) : 
+    + Với tổ hợp tự nhiên (4-3-2) dải sóng màu nào gắn chính xác với bộ màu R-G-B nên thu được ảnh giống khi quan sát màu thực tế của đối tượng : cây màu xanh lá , nước xanh dương , ...
+    + Với tổ hợp thực vật (5-4-3) dải sóng 5 cận hồng ngoại (NIR) phản xạ mạnh với thực vật được gán với màu R (đỏ) nên màu thực tế của đối tượng : cây / thực vật khỏe sẽ có màu đỏ tươi yếu sẽ màu đỏ xám dần , nước màu xanh đen / đen kịt 
 
